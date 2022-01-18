@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["album","add_songs()","each()","new()"],"longSearchIndex":["album","album#add_songs()","album#each()","album::new()"],"info":[["Album","","Album.html","",""],["add_songs","Album","Album.html#method-i-add_songs","(song)",""],["each","Album","Album.html#method-i-each","()",""],["new","Album","Album.html#method-c-new","()",""]]}}
