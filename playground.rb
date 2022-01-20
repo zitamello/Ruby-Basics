@@ -1,7 +1,8 @@
+name = "John Doe"
 
-def say_hello
-  puts "Hello World"
+def say_hello(word)
+  puts "Hello " + "#{word}"
 end
 
 
-say_hello
+say_hello(name)
