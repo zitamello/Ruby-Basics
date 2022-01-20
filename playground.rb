@@ -1,8 +1,8 @@
-name = "John Doe"
+sentence = "My name is Jane Smith"
 
-def say_hello(word)
-  puts "Hello " + "#{word}"
+def say_hello(sentence)
+  puts "Hello, " + "#{sentence}"
 end
 
 
-say_hello(name)
+say_hello(sentence)
