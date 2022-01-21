@@ -4,5 +4,4 @@ def say_hello(sentence)
   puts "Hello, " + "#{sentence}"
 end
 
-
 say_hello(sentence)
