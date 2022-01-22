@@ -37,3 +37,5 @@ while attempts < 3
   break if input == "q"
   attempts += 1
 end
+
+puts "You have exceeded the number of attempts. The program will now exit."
