@@ -1,7 +1,3 @@
-area_array = ["Manaus", "Belem", "Natal", "Fortaleza", "Recife","Salvador",
-              "Palmas", "Goiania", "Brasilia", "Florianopolis", "Curitiba",
-              "Vitoria", "Rio", "SP (Sao Paulo)"]
-
 area_hash = {  Manaus: 92,
                Belem: 91,
                Natal: 84,
@@ -17,6 +13,9 @@ area_hash = {  Manaus: 92,
                Rio: 21,
                Sp: 11 }
 
+def city_names(area_hash)
+  area_hash.keys
+end
 
 def find_area_code(area_entry, area_hash)
   user_entry = area_entry.capitalize
@@ -34,8 +33,13 @@ loop do
   answer = gets.chomp.downcase
   break if answer != "y"
   puts "Here is the list of areas available: "
-  puts area_array
+  puts city_names(area_hash)
   puts "Enter the area you wish to check its code: "
-  area_entry = gets.chomp.downcase
-  result = find_area_code(area_entry, area_hash)
+  area_entry = gets.chomp.capitalize
+  user_entry = area_entry.to_sym
+  if area_hash.include?(user_entry)
+    find_area_code(user_entry, area_hash)
+  else
+    puts "Invalid Entry. The city you entered is not registered in our data log yet."
+  end
 end
