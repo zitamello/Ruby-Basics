@@ -25,7 +25,6 @@ def find_area_code(area_entry, area_hash)
     break
     end
   end
-  return "invalid entry"
 end
 
 loop do
