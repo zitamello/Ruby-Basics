@@ -25,4 +25,22 @@ def create_security_for_users(users)
   users
 end
 
-puts create_security_for_users(users)
+new_users = create_security_for_users(users)
+
+def authenticate_user(entry_username, entry_password, new_users)
+  new_users.each do |user_record|
+    if user_record[:username] == entry_username && verification_hash(user_record[:password]) == entry_password
+      return user_record
+    end
+  end
+  "Invalid Credentials. Your username or password is not correct."
+end
+
+puts "Enter your username: "
+entry_username = gets.chomp
+
+puts "Enter your password: "
+entry_password = gets.chomp
+
+
+p authenticate_user(entry_username, entry_password, new_users)
