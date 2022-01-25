@@ -1,26 +1,24 @@
 
 module Crud
   require 'bcrypt'
-
+  puts "Module Crud Authenticator Activated"
   #generating hash for user's password
-  def generate_hash_for_passwords(user_password)
+  def self.generate_hash_for_passwords(user_password)
     BCrypt::Password.create(user_password)
   end
 
-  def verification_hash(password)
+  def self.verification_hash(password)
     BCrypt::Password.new(password)
   end
 
-  def create_security_for_users(users)
+  def self.create_security_for_users(users)
     users.each do |user_record|
       user_record[:password] = generate_hash_for_passwords(user_record[:password])
     end
     users
   end
 
-  new_users = create_security_for_users(users)
-
-  def authenticate_user(entry_username, entry_password, new_users)
+  def self.authenticate_user(entry_username, entry_password, new_users)
     new_users.each do |user_record|
       if user_record[:username] == entry_username && verification_hash(user_record[:password]) == entry_password
         return user_record

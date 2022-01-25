@@ -1,11 +1,19 @@
-require 'bcrypt'
+require_relative 'crud'
 
+users = [
+          { username: "jon", password: "ghost" },
+          { username: "robb", password: "greywind"},
+          { username: "sansa", password: "lady"},
+          { username: "arya", password: "nymeria"},
+          { username: "brandon", password: "summer"},
+          { username: "rickson", password: "shaggydog"}
+        ]
+
+puts "Enter your username: "
+entry_username = gets.chomp
 puts "Enter your password: "
-user_password = gets.chomp
-password = BCrypt::Password.create(user_password)
-  #=> "$2a$10$vI8aWBnW3fID.ZQ4/zo1G.q1lRps.9cGLcZEiGDMVr5yUP1KUOYTa"
-puts password
+entry_password = gets.chomp
 
-password = BCrypt::Password.new("$2a$12$wzkyNpXJm6/.5pP1le.N9O95sAIQKtke8.DouIHBEGalTqIL2Ocq2")
-puts password == user_password    #=> true
-# my_password == "not my password" #=> false
+hashed_users = Crud.create_security_for_users(users)
+new_hashed_users = Crud.authenticate_user(entry_username, entry_password, users)
+p new_hashed_users
