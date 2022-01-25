@@ -10,24 +10,10 @@ class Student
   end
 
   def to_s
-    "First name: #{@first_name}"
-    "Last name: #{@last_name}"
-    "Email : #{@email}"
-    "Username: #{@username}"
-  end
-
-  def set_username
-    @username = "alexhossain123"
+    "First name: #{@first_name}, Last name: #{@last_name}, Email: #{@email}, Username: #{@username}"
   end
 end
 
 
-mashrur = Student.new()
-mashrur.first_name = "Alex"
-mashrur.last_name = "Hossain"
-mashrur.email = "Alexhossain@gmail.com"
-
-puts mashrur.first_name
-puts mashrur.last_name
-puts mashrur.email
-puts mashrur.set_username
+alex = Student.new("Alex", "Hossain", "alexhossain123", "alexhossain@gmail.com", "password1")
+puts alex
